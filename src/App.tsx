@@ -1,8 +1,23 @@
 import React from 'react';
-import './App.css';
+import { styled, ThemeProvider, Paper } from '@mui/material';
+import { SearchPage } from './pages/Search.page';
+import { theme } from './styles/theme.styles';
+
+const AppRoot = styled(Paper)`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+`;
 
 function App() {
-  return <div className='App'></div>;
+  return (
+    <ThemeProvider {...{ theme }}>
+      <AppRoot>
+        <SearchPage></SearchPage>
+      </AppRoot>
+    </ThemeProvider>
+  );
 }
 
 export default App;
